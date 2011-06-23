@@ -1,8 +1,11 @@
 %h3 Новости
 
 .admin
-  %a{:href=>"/articles/new"}
+  %a{:href=>"/articles/"}
     Редактировать новости
+  %span &nbsp;|&nbsp;
+  %a{:href=>"/articles/new"}
+    Создать новость
 
 .news 
   - @articles.each do |article|

@@ -47,7 +47,7 @@ class ArticlesController < ApplicationController
     end
     
     image = Magick::Image.read(filepath).first
-    image.change_geometry!("100") { |cols, rows, img|
+    image.change_geometry!("150") { |cols, rows, img|
       newimg = img.resize(cols, rows)
       newimg.write(filepath)
     }
