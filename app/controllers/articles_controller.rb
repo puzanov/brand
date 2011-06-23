@@ -40,6 +40,11 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.xml
   def create
+    uploaded_io = params[:article][:image]
+    File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'w') do |file|
+      file.write(uploaded_io.read)
+    end
+    params[:article][:image] = uploaded_io.original_filename
     @article = Article.new(params[:article])
 
     respond_to do |format|
