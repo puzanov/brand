@@ -41,9 +41,18 @@ class ArticlesController < ApplicationController
   # POST /articles.xml
   def create
     uploaded_io = params[:article][:image]
-    File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'w') do |file|
+    filepath = Rails.root.join('public', 'uploads', uploaded_io.original_filename);
+    File.open(filepath, 'w') do |file|
       file.write(uploaded_io.read)
     end
+    
+    image = Magick::Image.read(filepath).first
+    image.change_geometry!("100") { |cols, rows, img|
+      newimg = img.resize(cols, rows)
+      newimg.write(filepath)
+    }
+
+
     params[:article][:image] = uploaded_io.original_filename
     @article = Article.new(params[:article])
 
