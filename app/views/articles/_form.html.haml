@@ -1,0 +1,33 @@
+= form_for(@article, :multipart => true) do |f| 
+  - if @article.errors.any? 
+    #error_explanation
+      %b 
+        = pluralize(@article.errors.count, "error")
+        prohibited this article from being saved:
+
+      %ul
+        - @article.errors.full_messages.each do |msg| 
+          %li =msg
+
+  .field
+    %div Заголовок новости 
+    = f.text_field :title 
+  
+  .field
+    %div Краское описание новости
+    = f.text_area :brief 
+  
+  .field
+    %div Полное описание новости
+    = f.text_area :content
+  
+  .field
+    %div Картинка к новости
+    = f.file_field :image
+    
+  .field   
+    %div Тип новости
+    = f.select(:type, [["Железо", "Железо"], ["Софт", "Софт"]])
+
+  .actions 
+    = f.submit("Готово!") 

@@ -13,8 +13,11 @@ h3 {margin:0; color:#990000;font-weight:normal;padding-bottom:10px;}
 .dealers_enter {padding-bottom:10px;}
 .events {margin-top:20px;}
 .events div {}
-.bottom {padding-left:200px;}
+.bottom {padding-left:200px;padding-top:70px;}
 .for_dealers form {}
 .news {}
 .admin {padding-bottom:10px;}
 .admin a {color:red;}
+.field {padding-bottom:10px;}
+.field textarea {width:400px; height:120px;}
+.padding10 {padding-top:10px}
