@@ -1,1 +1,12 @@
 %h3 Новости
+
+.admin
+  %a{:href=>"/articles/new"}
+    Редактировать новости
+
+.news 
+  - @articles.each do |article|
+    .title 
+      = article.title
+    .brief
+      = article.brief

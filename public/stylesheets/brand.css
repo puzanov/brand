@@ -1,10 +1,10 @@
 body {font-family:Verdana;font-size:12px;}
-h3 {margin:0}
+h3 {margin:0; color:#990000;font-weight:normal;padding-bottom:10px;}
 
 .main {width:800px;margin-left:auto;margin-right:auto}
 .head{height:60px;}
-.logo {float:left;}
-.address {float:right}
+.logo {float:left;font-size:28px;color:#333333;cursor:pointer;}
+.address {float:right; color:#660099; font-size:17px; padding-top:7px;}
 .clear {clear:both}
 .content{float:left;width:500px;}
 .sidebar{float:right;width:250px;}
@@ -12,6 +12,9 @@ h3 {margin:0}
 .submit {padding-top:10px;}
 .dealers_enter {padding-bottom:10px;}
 .events {margin-top:20px;}
-.events div {padding-top:10px;}
+.events div {}
 .bottom {padding-left:200px;}
-.for_dealers form {margin-top:10px}
+.for_dealers form {}
+.news {}
+.admin {padding-bottom:10px;}
+.admin a {color:red;}
