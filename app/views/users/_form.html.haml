@@ -1,0 +1,36 @@
+= form_for(@user) do |f|
+  - if @user.errors.any?
+    #error_explanation
+      %h2
+        = t 'errors.template.header', :model => t('.user'), :count => @user.errors.count
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :login
+    %br
+    = f.text_field :login
+  .field
+    = f.label :password
+    %br
+    = f.text_field :password
+  .field
+    = f.label :name
+    %br
+    = f.text_field :name
+  .field
+    = f.label :role
+    %br
+    = f.text_field :role
+  .field
+    = f.label :userpic
+    %br
+    = f.text_field :userpic
+  .field
+    = f.label :email
+    %br
+    = f.text_field :email
+
+  .actions
+    = f.submit
