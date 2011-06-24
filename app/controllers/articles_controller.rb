@@ -41,7 +41,8 @@ class ArticlesController < ApplicationController
   # POST /articles.xml
   def create
     uploaded_io = params[:article][:image]
-    filepath = Rails.root.join('public', 'uploads', uploaded_io.original_filename);
+    current_ts = Time.now.to_i.to_s
+    filepath = Rails.root.join('public', 'uploads', current_ts + uploaded_io.original_filename);
     File.open(filepath, 'w') do |file|
       file.write(uploaded_io.read)
     end
@@ -53,7 +54,7 @@ class ArticlesController < ApplicationController
     }
 
 
-    params[:article][:image] = uploaded_io.original_filename
+    params[:article][:image] = current_ts + uploaded_io.original_filename
     @article = Article.new(params[:article])
 
     respond_to do |format|
