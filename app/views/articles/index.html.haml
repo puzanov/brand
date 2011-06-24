@@ -1,32 +1,23 @@
 %h3 Список новостей
 
-%table
-  %tr
-    %th Title
-    %th Brief
-    %th Image
-    %th Type
-    %th
-    %th
-    %th
+.admin
+  = link_to 'Создать новость', new_article_path
 
-- @articles.each do |article| 
-  %tr
-    %td 
+.news
+  - @articles.each do |article| 
+    .title
       = article.title
-    %td 
-      = article.brief 
-    %td 
-      = image_tag("/uploads/" + article.image)
-    %td 
-      = article.type 
-    %td 
-      = link_to 'Show', article 
-    %td 
-      = link_to 'Edit', edit_article_path(article) 
-    %td 
-      = link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete 
-
+    .image
+      = image_tag ("/uploads/" + article.image)
+    .brief
+      %div
+        = article.brief
+      %div
+        = link_to 'Читать новость полностью', article
+    .clear
+    .admin
+      = link_to 'Редактировать', edit_article_path(article) 
+      = link_to 'Удалить', article, :confirm => 'Are you sure?', :method => :delete 
+    
 %br/
 
-= link_to 'Создать новость', new_article_path

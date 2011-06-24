@@ -1,0 +1,12 @@
+#notice
+  = notice 
+%h3
+  = @article.title
+%div
+  = @article.content
+.padding10
+= image_tag ("/uploads/" + @article.image)
+
+.admin
+  = link_to 'Редактировать новость', edit_article_path(@article)  
+= link_to 'Все новости', articles_path
