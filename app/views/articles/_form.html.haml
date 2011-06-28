@@ -1,3 +1,9 @@
+:javascript
+  bkLib.onDomLoaded(function() {
+    new nicEditor({iconsPath : '/images/nicEditorIcons.gif'}).panelInstance('brief');
+    new nicEditor({iconsPath : '/images/nicEditorIcons.gif'}).panelInstance('content');
+  });
+
 = form_for(@article, :html=> {:multipart => true}) do |f| 
   - if @article.errors.any? 
     #error_explanation
@@ -15,11 +21,11 @@
   
   .field
     %div Краское описание новости
-    = f.text_area :brief 
+    = f.text_area :brief, :id => "brief" 
   
   .field
     %div Полное описание новости
-    = f.text_area :content
+    = f.text_area :content, :id => "content"
   
   .field
     %div Картинка к новости

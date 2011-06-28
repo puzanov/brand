@@ -3,7 +3,7 @@
 %h3
   = @article.title
 %div
-  = @article.content
+  = raw @article.content
 .padding10
 = image_tag ("/uploads/" + @article.image)
 
