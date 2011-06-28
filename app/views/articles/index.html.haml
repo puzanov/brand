@@ -11,7 +11,7 @@
       = image_tag ("/uploads/" + article.image)
     .brief
       %div
-        = article.brief
+        = raw article.brief
       %div
         = link_to 'Читать новость полностью', article
     .clear
