@@ -40,21 +40,7 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.xml
   def create
-    uploaded_io = params[:article][:image]
-    current_ts = Time.now.to_i.to_s
-    filepath = Rails.root.join('public', 'uploads', current_ts + uploaded_io.original_filename);
-    File.open(filepath, 'w') do |file|
-      file.write(uploaded_io.read)
-    end
-    
-    image = Magick::Image.read(filepath).first
-    image.change_geometry!("150") { |cols, rows, img|
-      newimg = img.resize(cols, rows)
-      newimg.write(filepath)
-    }
-
-
-    params[:article][:image] = current_ts + uploaded_io.original_filename
+    upload_file_if_needed params
     @article = Article.new(params[:article])
 
     respond_to do |format|
@@ -71,6 +57,7 @@ class ArticlesController < ApplicationController
   # PUT /articles/1
   # PUT /articles/1.xml
   def update
+    upload_file_if_needed params
     @article = Article.find(params[:id])
 
     respond_to do |format|
@@ -94,5 +81,24 @@ class ArticlesController < ApplicationController
       format.html { redirect_to(articles_url) }
       format.xml  { head :ok }
     end
+  end
+
+  def upload_file_if_needed params
+    if params[:article][:image].blank?
+      return
+    end  
+    uploaded_io = params[:article][:image]
+    current_ts = Time.now.to_i.to_s
+    filepath = Rails.root.join('public', 'uploads', current_ts + uploaded_io.original_filename);
+    File.open(filepath, 'w') do |file|
+      file.write(uploaded_io.read)
+    end
+    
+    image = Magick::Image.read(filepath).first
+    image.change_geometry!("150") { |cols, rows, img|
+      newimg = img.resize(cols, rows)
+      newimg.write(filepath)
+    }
+    params[:article][:image] = current_ts + uploaded_io.original_filename
   end
 end
