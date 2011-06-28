@@ -23,3 +23,6 @@ h3 {margin:0; color:#990000;font-weight:normal;padding-bottom:10px;}
 .news .title {font-weight:bold;padding-bottom:10px;}
 .news .image {float:left; padding-right:10px;}
 #error {color:#DF0DB3;}
+.new {padding-bottom:20px;}
+.brief {width:300px;float:left;}
+.full_new a {font-size:9px;}
