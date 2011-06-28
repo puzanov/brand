@@ -17,3 +17,8 @@
       .clear  
 
 %h3 Новости кратко
+
+- @short_articles.each do |article|
+  .short 
+    %span= article.article_type
+    %span= link_to article.title, article
