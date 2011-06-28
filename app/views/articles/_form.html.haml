@@ -6,14 +6,12 @@
 
 = form_for(@article, :html=> {:multipart => true}) do |f| 
   - if @article.errors.any? 
-    #error_explanation
+    #error
       %b 
-        = pluralize(@article.errors.count, "error")
-        prohibited this article from being saved:
-
+        При создании новости возникли ошибки
       %ul
         - @article.errors.full_messages.each do |msg| 
-          %li =msg
+          %li= msg
 
   .field
     %div Заголовок новости 
