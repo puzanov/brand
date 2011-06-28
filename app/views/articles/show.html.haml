@@ -5,7 +5,7 @@
 %div
   = raw @article.content
 .padding10
-= image_tag ("/uploads/" + @article.image)
+= image_tag ("/uploads/" + @article.image) unless @article.image.nil?
 
 .admin
   = link_to 'Редактировать новость', edit_article_path(@article)  

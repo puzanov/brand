@@ -9,7 +9,7 @@
 .news 
   - @articles.each do |article|
     .title= article.title
-    .image= image_tag ("/uploads/" + article.image)
+    .image= image_tag ("/uploads/" + article.image) unless article.image.nil?
     .brief
       %div= raw article.brief
       %div= link_to 'Читать новость полностью', article

@@ -8,7 +8,7 @@
     .title
       = article.title
     .image
-      = image_tag ("/uploads/" + article.image)
+      = image_tag ("/uploads/" + article.image) unless article.image.nil?
     .brief
       %div
         = raw article.brief
