@@ -20,5 +20,8 @@
 
 - @short_articles.each do |article|
   .short 
-    %span= article.article_type
+    - if article.article_type == "Железо" 
+      .red= article.article_type
+    - elsif article.article_type == "Софт"
+      .green= article.article_type
     %span= link_to article.title, article

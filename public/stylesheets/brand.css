@@ -26,3 +26,5 @@ h3 {margin:0; color:#990000;font-weight:normal;padding-bottom:10px;}
 .new {padding-bottom:20px;}
 .brief {width:300px;float:left;}
 .full_new a {font-size:9px;}
+.short .red{color:red; width:60px;float:left;}
+.short .green{color:green;width:60px;float:left;}
