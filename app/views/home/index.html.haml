@@ -1,12 +1,6 @@
 %h3 Новости
 
-.admin
-  = link_to t('Редактировать новости'), articles_path
-  %span &nbsp;|&nbsp;
-  = link_to t('Создать новость'), new_article_path
-  %span &nbsp;|&nbsp;
-  = link_to t('Пользователи'), users_path
-
+= render "admin_links"
 .news 
   = render :partial => "articles/brief_article", :collection => @articles
 
