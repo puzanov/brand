@@ -39,7 +39,8 @@
         .events
           - get_current_event
           - if @current_event.nil?
-            .admin= link_to "Создать акцию", new_event_path
+            -if is_admin
+              .admin= link_to "Создать акцию", new_event_path
           - else  
             %h3= @current_event.title 
             %div= raw @current_event.content 
