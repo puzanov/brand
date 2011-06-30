@@ -1,0 +1,25 @@
+:javascript
+  bkLib.onDomLoaded(function() {
+    new nicEditor({iconsPath : '/images/nicEditorIcons.gif'}).panelInstance('content');
+  });
+
+
+= form_for(@event) do |f|
+  - if @event.errors.any?
+    #error_explanation
+      %h2
+        = t 'errors.template.header', :model => t('.event'), :count => @event.errors.count
+      %ul
+        - @event.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    %div Название акции
+    = f.text_field :title
+  
+  .field
+    %div Текст акции
+    = f.text_area :content, :id => "content"
+
+  .actions
+    = f.submit :value => "Сохранить"

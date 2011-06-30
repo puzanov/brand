@@ -1,0 +1,7 @@
+%h3= @event.title
+.event= raw @event.content
+.padding10
+.admin
+  = link_to "Все акции", events_path
+  = link_to "Редактировать", edit_event_path(@event)
+

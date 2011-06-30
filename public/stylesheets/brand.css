@@ -1,5 +1,6 @@
 body {font-family:Verdana;font-size:12px;}
 h3 {margin:0; color:#990000;font-weight:normal;padding-bottom:10px;}
+table {padding:0; margin:0;}
 
 .main {width:800px;margin-left:auto;margin-right:auto}
 .head{height:60px;}

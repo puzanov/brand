@@ -31,8 +31,14 @@
             .submit 
               %input{:type=>"submit", :value=>"Войти"}
         .events
-          %h3 Акция для дилеров!
-          %div Купи товара на 1000 долларов и получи абонемент в басик на 10 месяцев
+          - get_current_event
+          - if @current_event.nil?
+            .admin= link_to "Создать акцию", new_event_path
+          - else  
+            %h3= @current_event.title 
+            %div= raw @current_event.content 
+            .padding10
+            = link_to "Все акции", events_path
       .clear  
     
     .bottom

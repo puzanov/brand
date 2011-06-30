@@ -1,0 +1,9 @@
+
+.event
+  %h3= event.title
+  %div= event.content
+  .padding10
+  .admin
+    = link_to "Перейти к акции", event
+    = link_to "Редактировать", edit_event_path(event)
+    = link_to "Удалить", event, :confirm => "Вы уверены?", :method => :delete
