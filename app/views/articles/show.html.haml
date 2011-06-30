@@ -9,4 +9,6 @@
 
 .admin
   = link_to 'Редактировать новость', edit_article_path(@article)  
+  = link_to 'Удалить', @article, :confirm => 'Вы уыерены?', :method => :delete
+
 = link_to 'Все новости', articles_path
