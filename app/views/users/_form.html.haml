@@ -21,7 +21,7 @@
 
   .field
     %div Роль
-    = f.text_field :role
+    = f.select(:role, [["Пользователь", "user"], ["Администратор", "admin"]])
 
   .field
     %div Email

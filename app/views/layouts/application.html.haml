@@ -21,13 +21,13 @@
       .sidebar
         .for_dealers
           %h3 Вход для дилеров 
-          %form{:action => "/login", :method => "post"}
+          %form{:action => "/auth/login", :method => "post"}
             .login_caption Логин
             .login_input 
               %input{:type=>"text", :name=>"login"}
             .pass_caption Пароль
             .pass_input 
-              %input{:type=>"password", :name=>"pass"}
+              %input{:type=>"password", :name=>"password"}
             .submit 
               %input{:type=>"submit", :value=>"Войти"}
         .events
