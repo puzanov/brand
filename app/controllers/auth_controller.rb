@@ -1,9 +1,9 @@
 class AuthController < ApplicationController
   def login
     user = User.where("login=? AND password=?", params[:login], params[:password]).first
-    logger.info user
+    @auth = true;
     if user.nil? 
-      logger.info "not auth"
+      @auth = false;
     end  
   end
 

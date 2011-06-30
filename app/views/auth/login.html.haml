@@ -1,2 +1,4 @@
-%h1 Auth#login
-%p Find me in app/views/auth/login.html.haml
+- if @auth
+  %h3 Поздравляем! Вы успешно авторизовались 
+- else
+  %h3 Ошибка! Логин или пароль не правильные
