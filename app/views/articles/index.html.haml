@@ -3,21 +3,8 @@
 .admin
   = link_to 'Создать новость', new_article_path
 
-.news
-  - @articles.each do |article| 
-    .title
-      = article.title
-    .image
-      = image_tag ("/uploads/" + article.image) unless article.image.nil?
-    .brief
-      %div
-        = raw article.brief
-      %div
-        = link_to 'Читать новость полностью', article
-    .clear
-    .admin
-      = link_to 'Редактировать', edit_article_path(article) 
-      = link_to 'Удалить', article, :confirm => 'Are you sure?', :method => :delete 
-    
+.news 
+  = render :partial => "articles/brief_article", :collection => @articles
+
 %br/
 
