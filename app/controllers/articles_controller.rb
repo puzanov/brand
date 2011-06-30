@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_filter :only_for_admin , :except => [:index, :show]
+
   # GET /articles
   # GET /articles.xml
   def index

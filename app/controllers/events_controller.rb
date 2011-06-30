@@ -1,8 +1,9 @@
 class EventsController < ApplicationController
+  before_filter :only_for_admin , :except => [:index, :show]
   # GET /events
   # GET /events.xml
   def index
-    @events = Event.all
+    @events = Event.order("id desc")
 
     respond_to do |format|
       format.html # index.html.erb

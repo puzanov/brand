@@ -4,8 +4,9 @@
   .brief
     %div= raw brief_article.brief
     .full_new= link_to 'Читать новость полностью', brief_article
-  .admin
-    = link_to 'Редактировать', edit_article_path(brief_article) 
-    = link_to 'Удалить', brief_article, :confirm => 'Вы уыерены?', :method => :delete
+  - if is_admin
+    .admin
+      = link_to 'Редактировать', edit_article_path(brief_article) 
+      = link_to 'Удалить', brief_article, :confirm => 'Вы уыерены?', :method => :delete
   .clear
 

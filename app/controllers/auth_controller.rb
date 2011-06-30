@@ -4,10 +4,14 @@ class AuthController < ApplicationController
     @auth = true;
     if user.nil? 
       @auth = false;
-    end  
+    else
+      user.password = nil
+      session[:user] = user
+    end
   end
 
   def logout
+    reset_session
   end
 
   def profile

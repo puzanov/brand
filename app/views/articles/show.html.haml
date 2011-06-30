@@ -7,8 +7,9 @@
 .padding10
 = image_tag ("/uploads/" + @article.image) unless @article.image.nil?
 
-.admin
-  = link_to 'Редактировать новость', edit_article_path(@article)  
-  = link_to 'Удалить', @article, :confirm => 'Вы уыерены?', :method => :delete
-
+- if is_admin
+  .admin
+    = link_to 'Редактировать новость', edit_article_path(@article)  
+    = link_to 'Удалить', @article, :confirm => 'Вы уыерены?', :method => :delete
+.padding10
 = link_to 'Все новости', articles_path

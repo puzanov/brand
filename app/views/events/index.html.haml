@@ -1,7 +1,8 @@
 %h3 Акции
 
-.admin
-  = link_to "Создать акцию", new_event_path
+- if is_admin
+  .admin
+    = link_to "Создать акцию", new_event_path
 
 .events
   = render @events

@@ -1,7 +1,8 @@
 %h3 Список новостей
 
-.admin
-  = link_to 'Создать новость', new_article_path
+- if is_admin
+  .admin
+    = link_to 'Создать новость', new_article_path
 
 .news 
   = render :partial => "articles/brief_article", :collection => @articles
