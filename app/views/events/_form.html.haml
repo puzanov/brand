@@ -3,12 +3,11 @@
     new nicEditor({iconsPath : '/images/nicEditorIcons.gif'}).panelInstance('content');
   });
 
-
 = form_for(@event) do |f|
   - if @event.errors.any?
-    #error_explanation
-      %h2
-        = t 'errors.template.header', :model => t('.event'), :count => @event.errors.count
+    #error
+      %b
+        При создании акции возникли ошибки
       %ul
         - @event.errors.full_messages.each do |msg|
           %li= msg
