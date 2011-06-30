@@ -8,29 +8,24 @@
           %li= msg
 
   .field
-    = f.label :login
-    %br
+    %div Логин
     = f.text_field :login
+
   .field
-    = f.label :password
-    %br
+    %div Пароль
     = f.text_field :password
+
   .field
-    = f.label :name
-    %br
+    %div Имя фамилия
     = f.text_field :name
+
   .field
-    = f.label :role
-    %br
+    %div Роль
     = f.text_field :role
+
   .field
-    = f.label :userpic
-    %br
-    = f.text_field :userpic
-  .field
-    = f.label :email
-    %br
+    %div Email
     = f.text_field :email
 
   .actions
-    = f.submit
+    = f.submit :value => "Сохранить"
