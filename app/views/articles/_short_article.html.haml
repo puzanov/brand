@@ -1,0 +1,6 @@
+.short
+  - if short_article.article_type == "Железо"
+    .red= short_article.article_type
+  - elsif short_article.article_type == "Софт"
+    .green= short_article.article_type
+  %span= link_to short_article.title, short_article

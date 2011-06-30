@@ -6,22 +6,10 @@
   = link_to t('Создать новость'), new_article_path
   %span &nbsp;|&nbsp;
   = link_to t('Пользователи'), users_path
+
 .news 
-  - @articles.each do |article|
-    .new 
-      .title= article.title
-      .image= image_tag ("/uploads/" + article.image) unless article.image.nil?
-      .brief
-        %div= raw article.brief
-        .full_new= link_to 'Читать новость полностью', article
-      .clear  
+  = render :partial => "articles/brief_article", :collection => @articles
 
 %h3 Новости кратко
 
-- @short_articles.each do |article|
-  .short 
-    - if article.article_type == "Железо" 
-      .red= article.article_type
-    - elsif article.article_type == "Софт"
-      .green= article.article_type
-    %span= link_to article.title, article
+= render :partial => "articles/short_article", :collection => @short_articles 

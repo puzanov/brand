@@ -1,0 +1,8 @@
+.new
+  .title= brief_article.title
+  .image= image_tag ("/uploads/" + brief_article.image) unless brief_article.image.nil?
+  .brief
+    %div= raw brief_article.brief
+    .full_new= link_to 'Читать новость полностью', brief_article
+  .clear
+
