@@ -4,3 +4,4 @@ class HomeController < ApplicationController
     @short_articles = Article.order("id desc").limit(5).offset(2);
   end
 end
+#
