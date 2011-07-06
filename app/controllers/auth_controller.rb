@@ -1,5 +1,5 @@
 class AuthController < ApplicationController
-  verify :method => :post, :redirect_to => "/"
+  verify :method => :post, :only => :login, :redirect_to => "/"
   def login
     user = User.where("login=? AND password=?", params[:login], params[:password]).first
     @auth = true;
