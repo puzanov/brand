@@ -10,4 +10,7 @@
 .padding10  
 .admin
   = link_to "Редактировать пользователя", edit_user_path(@user)
-= link_to "Все пользователи", users_path
+
+-if @user.role == "admin"
+  = link_to "Все пользователи", users_path
+

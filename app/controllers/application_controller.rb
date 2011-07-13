@@ -7,4 +7,15 @@ class ApplicationController < ActionController::Base
       render :status => :forbidden, :action => "auth/forbidden"
     end
   end
+
+  def init_user
+    @user = User.find(params[:id])
+  end
+
+  def owner?
+    unless session[:user].id == @user.id || is_admin
+      render :status => :forbidden, :action => "auth/forbidden"
+    end
+  end
+
 end

@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
-  before_filter :only_for_admin
+ 
+  before_filter :init_user, :only => [:edit, :show, :update]
+  before_filter :owner?, :only => [:edit, :show, :update]
+  before_filter :only_for_admin, :only => [:index, :new, :create, :destroy]
   
   # GET /users
   # GET /users.xml
