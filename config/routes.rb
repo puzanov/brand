@@ -1,4 +1,6 @@
 Brand::Application.routes.draw do
+  get "map/index"
+
   match "auth/login" => "auth#login"
 
   get "auth/logout"
