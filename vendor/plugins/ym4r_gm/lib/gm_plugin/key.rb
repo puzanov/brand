@@ -14,6 +14,7 @@ module Ym4r
       else
         env = ENV['RAILS_ENV'] || RAILS_ENV
         GMAPS_API_KEY = YAML.load_file(RAILS_ROOT + '/config/gmaps_api_key.yml')[env]
+        puts GMAPS_API_KEY.inspect
       end
       
       def self.get(options = {})
