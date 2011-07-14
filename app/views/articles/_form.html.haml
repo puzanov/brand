@@ -7,22 +7,26 @@
 = form_for(@article, :html=> {:multipart => true}) do |f| 
   - if @article.errors.any? 
     #error
-      %b 
-        При создании новости возникли ошибки
-      %ul
-        - @article.errors.full_messages.each do |msg| 
-          %li= msg
-
+      %b
+        %p
+          .error_msg
+            При создании новости возникли ошибки
   .field
-    %div Заголовок новости 
+    %div Заголовок новости
+    .error_msg
+      = @article.errors[:title]
     = f.text_field :title 
   
   .field
-    %div Краское описание новости
+    %div Краткое описание новости
+    .error_msg
+      = @article.errors[:brief]
     = f.text_area :brief, :id => "brief" 
   
   .field
     %div Полное описание новости
+    .error_msg
+      = @article.errors[:content]
     = f.text_area :content, :id => "content"
   
   .field

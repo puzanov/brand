@@ -1,22 +1,26 @@
 = form_for(@user) do |f|
   - if @user.errors.any?
     #error_explanation
-      %b
-        При создании пользователя возникли ошибки
-      %ul
-        - @user.errors.full_messages.each do |msg|
-          %li= msg
-
+      %p
+        %b
+          .error_msg
+            При создании пользователя возникли ошибки
   .field
     %div Логин
+    .error_msg
+      = @user.errors[:login]
     = f.text_field :login
 
   .field
     %div Пароль
+    .error_msg
+      = @user.errors[:password]
     = f.text_field :password
 
   .field
     %div Имя фамилия
+    .error_msg
+      = @user.errors[:name]
     = f.text_field :name
   
   - if session[:user].id != @user.id
@@ -25,8 +29,10 @@
       = f.select(:role, [["Пользователь", "user"], ["Администратор", "admin"]])
   
   .field
-  %div Email
-  = f.text_field :email
+    %div Email
+    .error_msg
+      = @user.errors[:email]
+    = f.text_field :email
 
   .actions
   = f.submit :value => "Сохранить"
