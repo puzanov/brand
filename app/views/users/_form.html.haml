@@ -18,14 +18,15 @@
   .field
     %div Имя фамилия
     = f.text_field :name
-
+  
+  - if session[:user].id != @user.id
+    .field
+      %div Роль
+      = f.select(:role, [["Пользователь", "user"], ["Администратор", "admin"]])
+  
   .field
-    %div Роль
-    = f.select(:role, [["Пользователь", "user"], ["Администратор", "admin"]])
-
-  .field
-    %div Email
-    = f.text_field :email
+  %div Email
+  = f.text_field :email
 
   .actions
-    = f.submit :value => "Сохранить"
+  = f.submit :value => "Сохранить"
