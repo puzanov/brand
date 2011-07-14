@@ -3,6 +3,7 @@
   .image= image_tag ("/uploads/" + brief_article.image) unless brief_article.image.nil?
   .brief
     %div= raw brief_article.brief
+    .date= brief_article.created_at.strftime('%d-%b %H:%M')
     .full_new= link_to 'Читать новость полностью', brief_article
   - if is_admin
     .admin

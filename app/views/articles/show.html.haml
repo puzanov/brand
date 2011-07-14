@@ -6,7 +6,7 @@
   = raw @article.content
 .padding10
 = image_tag ("/uploads/" + @article.image) unless @article.image.nil?
-
+.date= @article.created_at.strftime('%d-%b %H:%M')
 - if is_admin
   .admin
     = link_to 'Редактировать новость', edit_article_path(@article)  
