@@ -31,3 +31,5 @@ table {padding:0; margin:0;}
 .full_new a {font-size:9px;}
 .short .red{color:red; width:60px;float:left;}
 .short .green{color:green;width:60px;float:left;}
+.date {color:grey;font-size:10px;}
+.error_msg {color:#DF0DB3}

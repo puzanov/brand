@@ -7,17 +7,20 @@
   - if @event.errors.any?
     #error
       %b
-        При создании акции возникли ошибки
-      %ul
-        - @event.errors.full_messages.each do |msg|
-          %li= msg
+        %p
+          .error_msg
+            При создании акции возникли ошибки
 
-  .field
+  .field    
     %div Название акции
+    .error_msg
+      = @event.errors[:title]
     = f.text_field :title
   
   .field
     %div Текст акции
+    .error_msg
+      = @event.errors[:content]
     = f.text_area :content, :id => "content"
 
   .actions
