@@ -1,4 +1,7 @@
 %h3 Редактирование пользователя
+- if @notice == "done"
+  .error_msg
+    Пароль изменен
 = render 'form'
 .padding10
 -if @user.role == "admin"

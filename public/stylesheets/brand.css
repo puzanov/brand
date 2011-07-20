@@ -6,7 +6,7 @@ table {padding:0; margin:0;}
 .head{height:60px;}
 .logo {float:left;font-size:28px;color:#333333;cursor:pointer;}
 .address {float:right; color:#660099; font-size:17px; padding-top:7px;}
-.map {text-align:right;}
+.map {text-align:right; font-size:12px}
 .map a {color:green;}
 .clear {clear:both}
 .content{float:left;width:500px;}
