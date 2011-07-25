@@ -33,3 +33,6 @@ table {padding:0; margin:0;}
 .short .green{color:green;width:60px;float:left;}
 .date {color:grey;font-size:10px;}
 .error_msg {color:#DF0DB3}
+.prod_link {margin-bottom: 10px;}
+.prod_list {list-style: none;}
+.prod_list a {color: grey}

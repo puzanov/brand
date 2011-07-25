@@ -20,5 +20,11 @@ Brand::Application.routes.draw do
 
   resources :articles
 
+  get "products/categories"
+
+  match "products/product_list/:id" => "products#product_list"
+
+  match "products/product/:id" => "products#product"
+
   root :to => "home#index"
 end
