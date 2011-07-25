@@ -1,4 +1,5 @@
 .bundle
+rmagick
 db/*.sqlite3
 log/*.log
 tmp/
