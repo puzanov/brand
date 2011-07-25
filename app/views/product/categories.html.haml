@@ -1,0 +1,6 @@
+%h3 Наша продукция
+.prod_list
+  %ul
+    - @categories.each() do |row|
+      %li
+        = link_to row["NAME"], '/product/product_list/' + row["ID"].to_s

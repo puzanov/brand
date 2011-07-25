@@ -1,0 +1,9 @@
+- @cat_name.each() do |row|
+  %h3
+    = row['name']
+.prod_list
+  %ul
+    - @products.each() do |row|
+      %li
+        = link_to row["NAME"], '/product/products/' + row["ID"].to_s
+  
