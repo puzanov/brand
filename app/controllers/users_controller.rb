@@ -97,7 +97,7 @@ class UsersController < ApplicationController
     old_pass = params[:old_pass]
     new_pass = params[:new_pass]
     conf_pass = params[:confirm_pass]
-    user_id = params[:user_id]
+    user_id = params[:id]
     
     @user = User.find(user_id)
 

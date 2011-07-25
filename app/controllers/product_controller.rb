@@ -1,4 +1,6 @@
 class ProductController < ApplicationController
+include ProductHelper
+
   def categories
     @categories = getCategories
   end
@@ -12,6 +14,11 @@ class ProductController < ApplicationController
   def product
     prod_id = params[:id]
     @product = getProduct(prod_id)
+  
+    
+    @product.each() do |row|     
+      @image_link = getImageLink(row["DETAIL_PICTURE"].to_s)
+    end
   end
 
 end
