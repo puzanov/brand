@@ -27,4 +27,9 @@ module ApplicationHelper
     client = Mysql2::Client.new(:host => "localhost", :database => "qwerty", :username => "root", :password => "tim") 
     results = client.query("SELECT `name` FROM b_iblock_section WHERE id = " + categoryId)
   end
+
+  def getImageLink(productId)
+    client = Mysql2::Client.new(:host => "localhost", :database => "qwerty", :username => "root", :password => "tim") 
+    results = client.query("SELECT * FROM b_file WHERE id = " + productId) 
+  end
 end
