@@ -34,6 +34,7 @@ table {padding:0; margin:0;}
 .date {color:grey;font-size:10px;}
 .error_msg {color:#DF0DB3}
 .prod_link {margin-bottom: 10px;}
+.prod_link a {color: grey}
 .prod_list ul {list-style: none;}
 .prod_list a {color: grey}
 .img_container {margin: 5px;}
