@@ -1,4 +1,10 @@
 Brand::Application.routes.draw do
+  get "product/categories"
+
+  get "product/product_list"
+
+  get "product/product"
+
   get "map/index"
 
   match "auth/login" => "auth#login"
@@ -20,11 +26,11 @@ Brand::Application.routes.draw do
 
   resources :articles
 
-  get "products/categories"
+  get "product/categories"
 
-  match "products/product_list/:id" => "products#product_list"
+  match "product/product_list/:id" => "product#product_list"
 
-  match "products/product/:id" => "products#product"
+  match "product/products/:id" => "product#product"
 
   root :to => "home#index"
 end
