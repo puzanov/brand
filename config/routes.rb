@@ -13,8 +13,10 @@ Brand::Application.routes.draw do
 
   get "auth/profile"
 
-  match "users/check_password" => "users#check_password"
+  match "users/:id/check_password" => "users#check_password"
 
+  match "users/:id/edit_password" => "users#edit_password"
+ 
   resources :events
 
   resources :users do
@@ -22,8 +24,7 @@ Brand::Application.routes.draw do
       get 'edit_password'
     end
   end
-  
-
+    
   resources :articles
 
   get "product/categories"
