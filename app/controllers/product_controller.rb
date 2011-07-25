@@ -14,10 +14,11 @@ include ProductHelper
   def product
     prod_id = params[:id]
     @product = getProduct(prod_id)
-  
+     
     
     @product.each() do |row|     
       @image_link = getImageLink(row["DETAIL_PICTURE"].to_s)
+      @category_link = getCategory(row["IBLOCK_SECTION_ID"].to_s)
     end
   end
 

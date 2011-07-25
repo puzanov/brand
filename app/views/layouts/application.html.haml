@@ -1,4 +1,4 @@
-!!! 5
+
 %html
 %head
   %title BRAND Company
@@ -16,7 +16,11 @@
           =link_to "Карта проезда", "/map/index"
       .clear  
     .prod_link
-      = link_to 'Наша продукция', '/product/categories'
+      = link_to 'Наша продукция', '/product/categories'      
+      -if !@category_link.nil?
+        - @category_link.each() do |row|
+          = link_to row["NAME"], '/product/product_list/' + row["ID"].to_s
+        
     .menu
     
     .middle 

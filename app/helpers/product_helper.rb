@@ -18,6 +18,10 @@ module ProductHelper
    results = @@client.query("SELECT `name` FROM b_iblock_section WHERE id = " + categoryId)
  end
 
+ def getCategory(categoryId)
+  results = @@client.query("SELECT * FROM b_iblock_section WHERE id = " + categoryId) 
+ end
+
  def getImageLink(productId)
    results = @@client.query("SELECT * FROM b_file WHERE id = " + productId) 
  end
