@@ -11,11 +11,12 @@
       = @user.errors[:login]
     = f.text_field :login
 
-  .field
-    %div Пароль
-    .error_msg
-      = @user.errors[:password]
-    = f.text_field :password
+  - if @user.id != session[:user].id
+    .field
+      %div Пароль
+      .error_msg
+        = @user.errors[:password]
+      = f.text_field :password
 
   .field
     %div Имя фамилия
@@ -36,3 +37,6 @@
 
   .actions
   = f.submit :value => "Сохранить"
+  %p
+  -if session[:user].id == @user.id
+    = link_to 'Изменить пароль', 'edit_password'
