@@ -1,4 +1,6 @@
 class ProductController < ApplicationController
+include ProductHelper
+
   def categories
     @categories = getCategories
   end
