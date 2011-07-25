@@ -1,3 +1,4 @@
+config/mysql.yml
 .bundle
 rmagick
 db/*.sqlite3

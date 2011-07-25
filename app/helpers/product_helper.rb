@@ -1,29 +1,34 @@
 module ProductHelper
- @@client = Mysql2::Client.new(:host => "localhost", :database => "qwerty", :username => "root", :password => "tim") 
+  @@config = YAML.load_file(Rails.root + "config/mysql.yml")
+  @@client = Mysql2::Client.new(
+    :host => @@config["host"],
+    :database => @@config["dbname"],
+    :username => @@config["user"],
+    :password => @@config["pass"]
+  )
 
-
- def getCategories
+  def getCategories
   results = @@client.query("SELECT * FROM b_iblock_section") 
- end
+  end
 
- def getProducts(categoryId)
+  def getProducts(categoryId)
   results = @@client.query("SELECT * FROM b_iblock_element WHERE iblock_section_id = " + categoryId) 
- end
+  end
 
- def getProduct(productId)
+  def getProduct(productId)
    results = @@client.query("SELECT * FROM b_iblock_element WHERE id = " + productId)  
- end
+  end
 
- def getCategoryName(categoryId)
+  def getCategoryName(categoryId)
    results = @@client.query("SELECT `name` FROM b_iblock_section WHERE id = " + categoryId)
- end
+  end
 
- def getCategory(categoryId)
+  def getCategory(categoryId)
   results = @@client.query("SELECT * FROM b_iblock_section WHERE id = " + categoryId) 
- end
+  end
 
- def getImageLink(productId)
+  def getImageLink(productId)
    results = @@client.query("SELECT * FROM b_file WHERE id = " + productId) 
- end
+  end
 
 end
