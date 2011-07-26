@@ -8,7 +8,7 @@ module ProductHelper
   )
 
  def getCategories
-  results = @@client.query("SELECT * FROM b_iblock_section WHERE active = 'Y'") 
+  results = @@client.query("SELECT * FROM b_iblock_section WHERE active = 'Y' AND iblock_section_id != 'NULL'") 
  end
 
  def getProducts(categoryId)
