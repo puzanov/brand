@@ -7,13 +7,13 @@ module ProductHelper
     :password => @@config["pass"]
   )
 
-  def getCategories
-  results = @@client.query("SELECT * FROM b_iblock_section") 
-  end
+ def getCategories
+  results = @@client.query("SELECT * FROM b_iblock_section WHERE active = 'Y'") 
+ end
 
-  def getProducts(categoryId)
-  results = @@client.query("SELECT * FROM b_iblock_element WHERE iblock_section_id = " + categoryId) 
-  end
+ def getProducts(categoryId)
+  results = @@client.query("SELECT * FROM b_iblock_element WHERE iblock_section_id = " + categoryId + " AND active = 'Y'") 
+ end
 
   def getProduct(productId)
    results = @@client.query("SELECT * FROM b_iblock_element WHERE id = " + productId)  
@@ -27,8 +27,7 @@ module ProductHelper
   results = @@client.query("SELECT * FROM b_iblock_section WHERE id = " + categoryId) 
   end
 
-  def getImageLink(productId)
-   results = @@client.query("SELECT * FROM b_file WHERE id = " + productId) 
-  end
-
+ def getImageLink(imgId)
+   results = @@client.query("SELECT * FROM b_file WHERE id = " + imgId) 
+ end
 end
