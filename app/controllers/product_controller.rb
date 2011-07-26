@@ -17,7 +17,9 @@ include ProductHelper
      
     
     @product.each() do |row|     
-      @image_link = getImageLink(row["DETAIL_PICTURE"].to_s)
+      if !row["DETAIL_PICTURE"].nil?
+        @image_link = getImageLink(row["DETAIL_PICTURE"].to_s)
+      end
       @category_link = getCategory(row["IBLOCK_SECTION_ID"].to_s)
     end
   end
