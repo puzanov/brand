@@ -30,4 +30,8 @@ module ProductHelper
  def getImageLink(imgId)
    results = @@client.query("SELECT * FROM b_file WHERE id = " + imgId) 
  end
+
+ def getProductPrice(productId)
+  results = @@client.query("SELECT * FROM b_catalog_price WHERE product_id = " + productId + " AND catalog_group_id = 1")
+ end
 end
