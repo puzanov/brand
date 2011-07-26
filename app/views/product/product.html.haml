@@ -12,3 +12,8 @@
       = row["PRICE"].to_s + " " + row["CURRENCY"].to_s
 - @product.each() do |row|
   = raw(row["DETAIL_TEXT"])
+  .search
+    .yandex 
+      = link_to "Посмотреть информацию о товаре в Яндексе", "http://yandex.ru/yandsearch?text=" + row["NAME"]
+    .google 
+      = link_to "Посмотреть информацию о товаре в Google", "http://www.google.ru/search?ie=UTF-8&hl=ru&q=" + row["NAME"] 
