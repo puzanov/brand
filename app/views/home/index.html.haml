@@ -1,8 +1,13 @@
-%h3 Новости
+.news_title
+  %h3 Новости
 .news_categories_link
-  = link_to "Железо", {:controller => "articles", :action => "index", :article_type => "Железо"}
-  = link_to "Софт", {:controller => "articles", :action => "index", :article_type => "Софт"}
-  = link_to "Новости компании", {:controller => "articles", :action => "index", :article_type => "Новости компании"}
+  .red_link
+    = link_to "Железо", {:controller => "articles", :action => "index", :article_type => "Железо"}
+  .green_link
+    = link_to "Софт", {:controller => "articles", :action => "index", :article_type => "Софт"}
+  .orange_link  
+    = link_to "Новости компании", {:controller => "articles", :action => "index", :article_type => "Новости компании"}
+.clear_left
 = render "admin_links"
 .news 
   = render :partial => "articles/brief_article", :collection => @articles

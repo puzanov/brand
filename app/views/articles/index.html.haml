@@ -1,8 +1,13 @@
-%h3 Список новостей
+.news_title
+  %h3 Список новостей
 .news_categories_link
-  = link_to "Железо", {:action => "index", :article_type => "Железо"}
-  = link_to "Софт", {:action => "index", :article_type => "Софт"}
-  = link_to "Новости компании", {:action => "index", :article_type => "Новости компании"}
+  .red_link
+    = link_to "Железо", {:action => "index", :article_type => "Железо"}
+  .green_link
+    = link_to "Софт", {:action => "index", :article_type => "Софт"}
+  .orange_link
+    = link_to "Новости компании", {:action => "index", :article_type => "Новости компании"}
+.clear_left
 - if is_admin
   .admin
     = link_to 'Создать новость', new_article_path

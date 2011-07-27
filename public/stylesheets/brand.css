@@ -32,8 +32,12 @@ table {padding:0; margin:0;}
 .short .red{color:red; width:145px;float:left;}
 .short .green{color:green;width:145px;float:left;}
 .short .orange{color:#B36815;width:145px;float:left;}
-.news_categories_link {margin-bottom:10px;}
-.news_categories_link a {font-size:9px; color:#900;}
+.news_categories_link div {float:left; margin-right:3px;margin-top:3px;}
+.news_categories_link a {font-size:9px;}
+.red_link a {color:red;}
+.green_link a {color: green;}
+.orange_link a {color:#B36815;}
+.news_title{float:left;margin-right:10px;}
 .date {color:grey;font-size:10px;}
 .error_msg {color:#DF0DB3}
 .prod_link {margin-bottom: 10px;}
@@ -43,3 +47,4 @@ table {padding:0; margin:0;}
 .img_container {margin: 5px;}
 .price_container {color: #FF5100}
 .search {padding-top:15px;}
+.clear_left{clear:left;}
