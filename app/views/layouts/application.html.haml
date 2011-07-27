@@ -19,7 +19,7 @@
       = link_to 'Каталог товаров', '/product/categories'      
       -if !@category_link.nil?
         - @category_link.each() do |row|
-          %span ->
+          %span
           = link_to row["NAME"], '/product/product_list/' + row["ID"].to_s
         
     .middle 
