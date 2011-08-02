@@ -8,9 +8,13 @@ class ArticlesController < ApplicationController
     File.open(filepath, 'w') do |file|
       file.write(uploaded_io.read)
     end
-    logger.info "PIZSDADADASDASEWERSDFSDFSDFSDFSDFSDFSDVFSD"
-    logger.info filepath.inspect
-    render :nothing => true
+    image = Magick::Image.read(filepath).first
+    status = Hash.new
+    status["done"] = 1
+    status["width"] = image.columns
+    status["url"] = "/uploads/" + current_ts + uploaded_io.original_filename
+    json_status = status.to_json
+    render :text => "<script>try{top.nicUploadButton.statusCb(#{json_status})}catch(e){alert(e.message);}</script>"
   end
   
   # GET /articles
