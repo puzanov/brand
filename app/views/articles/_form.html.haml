@@ -1,7 +1,7 @@
 :javascript
   bkLib.onDomLoaded(function() {
-    new nicEditor({iconsPath : '/images/nicEditorIcons.gif'}).panelInstance('brief');
-    new nicEditor({iconsPath : '/images/nicEditorIcons.gif'}).panelInstance('content');
+    new nicEditor({iconsPath : '/images/nicEditorIcons2.gif',uploadURI : '/upload_img' }).panelInstance('brief');
+    new nicEditor({iconsPath : '/images/nicEditorIcons2.gif'}).panelInstance('content');
   });
 
 = form_for(@article, :html=> {:multipart => true}) do |f| 

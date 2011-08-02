@@ -1,6 +1,18 @@
 class ArticlesController < ApplicationController
-  before_filter :only_for_admin , :except => [:index, :show]
+  before_filter :only_for_admin , :except => [:index, :show, :upload_img]
 
+  def upload_img
+    uploaded_io = params[:nicImage]
+    current_ts = Time.now.to_i.to_s
+    filepath = Rails.root.join('public', 'uploads', current_ts + uploaded_io.original_filename);
+    File.open(filepath, 'w') do |file|
+      file.write(uploaded_io.read)
+    end
+    logger.info "PIZSDADADASDASEWERSDFSDFSDFSDFSDFSDFSDVFSD"
+    logger.info filepath.inspect
+    render :nothing => true
+  end
+  
   # GET /articles
   # GET /articles.xml
   def index
