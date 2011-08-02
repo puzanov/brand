@@ -21,13 +21,13 @@
     %div Краткое описание новости
     .error_msg
       = @article.errors[:brief]
-    = f.text_area :brief, :id => "brief" 
+    = f.text_area :brief, :id => "brief", :style => "width: 500px;"
   
   .field
     %div Полное описание новости
     .error_msg
       = @article.errors[:content]
-    = f.text_area :content, :id => "content"
+    = f.text_area :content, :id => "content", :style => "width: 500px;"
   
   .field
     %div Картинка к новости

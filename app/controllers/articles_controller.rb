@@ -14,6 +14,10 @@ class ArticlesController < ApplicationController
     status["width"] = image.columns
     status["url"] = "/uploads/" + current_ts + uploaded_io.original_filename
     json_status = status.to_json
+
+    logger.info '!!!!!!!!!!!!!!11'
+    logger.info session.inspect
+
     render :text => "<script>try{top.nicUploadButton.statusCb(#{json_status})}catch(e){alert(e.message);}</script>"
   end
   
@@ -56,6 +60,8 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+    logger.info "!!!!!!!!!!!!"
+    logger.info session.inspect
     @article = Article.find(params[:id])
   end
 

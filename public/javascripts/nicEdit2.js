@@ -938,7 +938,7 @@ var nicEditorAdvancedButton = nicEditorButton.extend({
 			if(this.pane && this.pane.pane) {
 				this.removePane();
 			} else {
-				this.pane = new nicEditorPane(this.contain,this.ne,{width : (this.width || '270px'), backgroundColor : '#fff'},this);
+				this.pane = new nicEditorPane(this.contain,this.ne,{width : (this.width || '350px'), backgroundColor : '#fff'},this);
 				this.addPane();
 				this.ne.selectedInstance.saveRng();
 			}
