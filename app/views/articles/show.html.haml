@@ -7,9 +7,16 @@
 .padding10
 = image_tag ("/uploads/" + @article.image) unless @article.image.nil?
 .date= @article.created_at('%d-%b %H:%M')
+
+#namba-comments
+%script{:type => "text/javascript",
+        :src  => "http://api.namba.kg/nb.js.php"}
+%script(type="text/javascript")
+  NB.insert("comments", "namba-comments", {component: "brandkg", componentId: #{@article.id}}); 
+      
 - if is_admin
   .admin
     = link_to 'Редактировать новость', edit_article_path(@article)  
-    = link_to 'Удалить', @article, :confirm => 'Вы уыерены?', :method => :delete
+    = link_to 'Удалить', @article, :confirm => 'Вы уверены?', :method => :delete
 .padding10
 = link_to 'Все новости', articles_path
