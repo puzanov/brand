@@ -9,7 +9,7 @@ table {padding:0; margin:0;}
 .map {text-align:right; font-size:12px}
 .map a {color:green;}
 .clear {clear:both}
-.content{float:left;}
+.content{float:left;width:500px;}
 .sidebar{float:right;width:250px;}
 .middle {min-height:300px;}
 .submit {padding-top:10px;}
@@ -27,7 +27,7 @@ table {padding:0; margin:0;}
 .news .image {float:left; padding-right:10px;}
 #error {color:#DF0DB3;}
 .new {padding-bottom:20px;}
-.brief {float:left;}
+.brief {float:left;width:500px;}
 .full_new a {font-size:9px;}
 .short .red{color:red; width:145px;float:left;}
 .short .green{color:green;width:145px;float:left;}
