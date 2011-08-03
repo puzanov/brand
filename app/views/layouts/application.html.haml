@@ -42,8 +42,8 @@
             %h3 
               Здравствуйте, 
               = session[:user].name
-            %p=link_to "Редактировать профиль","/users/#{session[:user].id}"
-            
+            %div=link_to "Редактировать профиль","/users/#{session[:user].id}"
+            .price=link_to 'Прайсы', prices_path 
             =link_to "Выйти", "/auth/logout"
         .events
           - get_current_event

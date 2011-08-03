@@ -1,4 +1,6 @@
-.admin= link_to "Закачать новый прайс", new_price_path
+%h3 Прайсы для скачивания
+-if is_admin
+  .admin= link_to "Закачать новый прайс", new_price_path
 
 - for price in @prices
   .price_desc 
@@ -7,7 +9,8 @@
     = I18n.l price.created_at.to_date, :format => :long
   .price_actions
     %div= link_to "Скачать прайс!", price.price.url
-    .admin
-      = link_to "Редактировать", edit_price_path(price)
-      = link_to "Удалить", price, :confirm => t('are_you_sure', :default => 'Are you sure?'), :method => :delete
+    -if is_admin
+      .admin
+        = link_to "Редактировать", edit_price_path(price)
+        = link_to "Удалить", price, :confirm => t('are_you_sure', :default => 'Are you sure?'), :method => :delete
 

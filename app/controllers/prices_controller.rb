@@ -1,4 +1,5 @@
 class PricesController < ApplicationController
+  before_filter :only_for_admin , :except => [:index]
   # GET /prices
   # GET /prices.xml
   def index
@@ -44,7 +45,7 @@ class PricesController < ApplicationController
 
     respond_to do |format|
       if @price.save
-        format.html { redirect_to(@price, :notice => 'Price was successfully created.') }
+        format.html { redirect_to :action => "index" }
         format.xml  { render :xml => @price, :status => :created, :location => @price }
       else
         format.html { render :action => "new" }
