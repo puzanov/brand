@@ -1285,7 +1285,7 @@ nicEditors.registerPlugin(nicPlugin,nicColorOptions);
 /* START CONFIG */
 var nicImageOptions = {
 	buttons : {
-		'image' : {name : 'Add Image', type : 'nicImageButton', tags : ['IMG']}
+		'image' : {name : 'Загрузить картинку с интернета', type : 'nicImageButton', tags : ['IMG']}
 	}
 	
 };
@@ -1295,7 +1295,7 @@ var nicImageButton = nicEditorAdvancedButton.extend({
 	addPane : function() {
 		this.im = this.ne.selectedInstance.selElm().parentTag('IMG');
 		this.addForm({
-			'' : {type : 'title', txt : 'Add/Edit Image'},
+			'' : {type : 'title', txt : 'Вставьте адрес картинки в поле URL'},
 			'src' : {type : 'text', txt : 'URL', 'value' : 'http://', style : {width: '150px'}},
 			'alt' : {type : 'text', txt : 'Alt Text', style : {width: '100px'}},
 			'align' : {type : 'select', txt : 'Align', options : {none : 'Default','left' : 'Left', 'right' : 'Right'}}
@@ -1358,7 +1358,7 @@ nicEditors.registerPlugin(nicPlugin,nicSaveOptions);
 /* START CONFIG */
 var nicUploadOptions = {
 	buttons : {
-		'upload' : {name : 'Upload Image', type : 'nicUploadButton'}
+		'upload' : {name : 'Загрузить картинку с компьютера', type : 'nicUploadButton'}
 	}
 	
 };
@@ -1390,7 +1390,7 @@ var nicUploadButton = nicEditorAdvancedButton.extend({
 		if(this.uri == this.nicURI) {
 			myDoc.write('<div style="position: absolute; margin-left: 160px;"><img src="http://imageshack.us/img/imageshack.png" width="30" style="float: left;" /><div style="float: left; margin-left: 5px; font-size: 10px;">Hosted by<br /><a href="http://www.imageshack.us/" target="_blank">ImageShack</a></div></div>');
 		}
-		myDoc.write('<div style="font-size: 14px; font-weight: bold; padding-top: 5px;">Insert an Image</div>');
+		myDoc.write('<div style="font-size: 14px; font-weight: bold; padding-top: 5px;">Выберите картинку</div>');
 		myDoc.write('<input name="nicImage" type="file" style="margin-top: 10px;" />');
 		myDoc.write('</form>');
 		myDoc.write("</body></html>");
