@@ -14,13 +14,12 @@ include ProductHelper
   def product
     prod_id = params[:id]
     @product = getProduct(prod_id)
-     
-    
+        
     @product.each() do |row|     
       if !row["DETAIL_PICTURE"].nil?
         @image_link = getImageLink(row["DETAIL_PICTURE"].to_s)
       end
-
+      @page_title = row["NAME"]
       @product_price = getProductPrice(prod_id)
       @category_link = getCategory(row["IBLOCK_SECTION_ID"].to_s)
     end

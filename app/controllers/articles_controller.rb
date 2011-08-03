@@ -37,7 +37,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1.xml
   def show
     @article = Article.find(params[:id])
-
+    @page_title = @article.title
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @article }
@@ -58,6 +58,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
+    @page_title = @article.title
   end
 
   # POST /articles

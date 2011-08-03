@@ -1,7 +1,8 @@
 
 %html
 %head
-  %title BRAND Company
+  %title 
+    = @page_title or 'BRAND Company'
   = stylesheet_link_tag :all
   = javascript_include_tag "jquery.js", "rails.js", "application.js", "nicEdit2.js" 
   = csrf_meta_tag 
