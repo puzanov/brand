@@ -1,0 +1,12 @@
+= form_for(@price) do |f|
+  - if @price.errors.any?
+    #error_explanation
+      %h2
+        = t 'errors.template.header', :model => t('.price'), :count => @price.errors.count
+      %ul
+        - @price.errors.full_messages.each do |msg|
+          %li= msg
+  = f.file_field :price
+
+  .actions
+    = f.submit

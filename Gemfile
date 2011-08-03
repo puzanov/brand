@@ -4,3 +4,4 @@ gem 'sqlite3'
 gem 'haml'
 gem 'rmagick', :require => "RMagick"
 gem 'mysql2'
+gem 'paperclip'
