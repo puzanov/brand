@@ -1,7 +1,14 @@
 :javascript
   bkLib.onDomLoaded(function() {
-    new nicEditor({iconsPath : '/images/nicEditorIcons2.gif',uploadURI : '/upload_img' }).panelInstance('brief');
-    new nicEditor({iconsPath : '/images/nicEditorIcons2.gif',uploadURI : '/upload_img' }).panelInstance('content');
+    new nicEditor({iconsPath : '/images/nicEditorIcons2.gif',
+                   buttonList : ['bold','italic','underline','left','center','right','justify','ol','ul','indent',
+                                 'outdent','link','unlink','image','upload','forecolor','bgcolor'], 
+                   uploadURI : '/upload_img' }).panelInstance('brief');
+
+    new nicEditor({iconsPath : '/images/nicEditorIcons2.gif',
+                   buttonList : ['bold','italic','underline','left','center','right','justify','ol','ul','indent',
+                                 'outdent','link','unlink','image','upload','forecolor','bgcolor'], 
+                   uploadURI : '/upload_img' }).panelInstance('content');
   });
 
 = form_for(@article, :html=> {:multipart => true}) do |f| 
