@@ -6,6 +6,8 @@
 development: 
  192.168.8.119: ABQIAAAAgzWLEmj3ztT5D6kx9AR-VxStd8WZxRdEel0fl4LO3dgc76hJThT79K0DWCr_TxhO3QyDTy31jjDFkQ
  brand.namba.kg: ABQIAAAAgzWLEmj3ztT5D6kx9AR-VxTlOyd4uyt0P5ovU20rj6MWj4RlVBT56jXlgnCENvAYsApAi5mO9suOJA
+ brand.kg: ABQIAAAAgzWLEmj3ztT5D6kx9AR-VxT4fR8m0YnxrRGiWDY7lm4RhoeyLxRQtC3cURIdIxFjEwhdm7l3iOprjg
+ 127.0.0.1: ABQIAAAAgzWLEmj3ztT5D6kx9AR-VxT4fR8m0YnxrRGiWDY7lm4RhoeyLxRQtC3cURIdIxFjEwhdm7l3iOprjg
 
 test: 
 
