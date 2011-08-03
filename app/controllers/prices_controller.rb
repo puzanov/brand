@@ -2,7 +2,7 @@ class PricesController < ApplicationController
   # GET /prices
   # GET /prices.xml
   def index
-    @prices = Price.all
+    @prices = Price.order("id desc")
 
     respond_to do |format|
       format.html # index.html.erb

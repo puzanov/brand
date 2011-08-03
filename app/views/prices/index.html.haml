@@ -1,14 +1,13 @@
 .admin= link_to "Закачать новый прайс", new_price_path
 
-%table
-  %thead
-    %tr
-      %th{:colspan => 3}= t 'actions'
-  
-  %tbody
-    - for price in @prices
-      %tr{ :class => cycle(:odd, :even) }
-        %td.action= link_to t('show'), price
-        %td.action= link_to t('edit'), edit_price_path(price)
-        %td.action= link_to t('destroy'), price, :confirm => t('are_you_sure', :default => 'Are you sure?'), :method => :delete
+- for price in @prices
+  .price_desc 
+    Прайс за
+    - I18n.locale = :ru
+    = I18n.l price.created_at.to_date, :format => :long
+  .price_actions
+    %div= link_to "Скачать прайс!", price.price.url
+    .admin
+      = link_to "Редактировать", edit_price_path(price)
+      = link_to "Удалить", price, :confirm => t('are_you_sure', :default => 'Are you sure?'), :method => :delete
 

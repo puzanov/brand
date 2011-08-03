@@ -1,4 +1,4 @@
-= form_for(@price) do |f|
+= form_for(@price, :html => { :multipart => true }) do |f|
   - if @price.errors.any?
     #error_explanation
       %h2

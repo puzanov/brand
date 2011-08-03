@@ -1,3 +1,4 @@
+public/system
 config/mysql.yml
 .bundle
 rmagick
