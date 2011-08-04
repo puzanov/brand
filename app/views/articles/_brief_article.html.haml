@@ -3,7 +3,9 @@
   .image= image_tag ("/uploads/" + brief_article.image) unless brief_article.image.nil?
   .brief
     %div= raw brief_article.brief
-    .date= brief_article.created_at.strftime('%d-%b %H:%M')
+    .date
+      - I18n.locale = :ru
+      = I18n.l brief_article.created_at.to_date, :format => :long
     .full_new= link_to 'Читать новость полностью', brief_article
   - if is_admin
     .admin
