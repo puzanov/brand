@@ -6,7 +6,9 @@
   = raw @article.content
 .padding10
 = image_tag ("/uploads/" + @article.image) unless @article.image.nil?
-.date= @article.created_at('%d-%b %H:%M')
+.date
+  - I18n.locale = :ru
+  = I18n.l @article.created_at.to_date, :format => :long
 
 #namba-comments
 %script{:type => "text/javascript",
