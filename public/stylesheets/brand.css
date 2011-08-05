@@ -18,6 +18,7 @@ table {padding:0; margin:0;}
 .events div {}
 .bottom {padding-left:200px;padding-top:70px;}
 .for_dealers form {}
+.for_dealers .price a {color:#36AF96;}
 .admin {padding-bottom:10px;}
 .admin a {color:red;}
 .field {padding-bottom:10px;}
@@ -48,3 +49,4 @@ table {padding:0; margin:0;}
 .price_container {color: #FF5100}
 .search {padding-top:15px;}
 .clear_left{clear:left;}
+.price_actions{padding-left:20px;}

@@ -1,4 +1,6 @@
 Brand::Application.routes.draw do
+  resources :prices
+
   get "product/categories"
 
   get "product/product_list"
