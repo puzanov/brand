@@ -34,4 +34,11 @@ module ProductHelper
  def getProductPrice(productId)
   results = @@client.query("SELECT * FROM b_catalog_price WHERE product_id = " + productId + " AND catalog_group_id = 1")
  end
+
+ def hasProduct? cat
+  productExist = false
+  products = getProducts(cat)
+  productExist = true if products.size > 0
+  return productExist
+ end
 end
