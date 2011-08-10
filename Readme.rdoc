@@ -1,35 +1,35 @@
-Установка под ubuntu
-1. Подготовим систему
+== Установка под ubuntu
+* Подготовим систему
    $ sudo aptitude update
    $ sudo aptitude upgrade
 Если система давно не обновлялась, это может занять некоторое время
 
-2. Устанавливаем ruby
+* Устанавливаем ruby
    $sudo apt-get install ruby-full build-essential libruby-extras libsqlite3-ruby rubygems
   
-3. Обновляем rubygems
+* Обновляем rubygems
    $ sudo gem update --system
 
-4. Устанавливаем рельсы
+* Устанавливаем рельсы
    $ sudo apt-get install rails
 
-5. Устанавливаем rmagic. Для работы с изображениями
+* Устанавливаем rmagic. Для работы с изображениями
    $ sudo apt-get install librmagick-ruby
 
-6. Копируем код проекта и устанавливаем необходимые пакеты
+* Копируем код проекта и устанавливаем необходимые пакеты
    $ git clone git://github.com/puzanov/brand.git
    $ sudo gem install bundler
    $ cd brand
    $ bundle install
 
-7. Создаем базу данных
+* Создаем базу данных
    $ rake db:migrate
 
-8. В директории config потребуется создать файл mysql.yml и записать в него
+* В директории config потребуется создать файл mysql.yml и записать в него
    host: localhost
    dbname: qwerty
    user: root
    pass:
 
-9. Запускаем сервер
+* Запускаем сервер
    $ rails server
