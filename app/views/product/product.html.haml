@@ -10,14 +10,27 @@
     Наша цена
     - @product_price.each() do |row|
       = row["PRICE"].to_s + " " + row["CURRENCY"].to_s
+%h3 
+  Описание
 - @product.each() do |row|
   = raw(row["DETAIL_TEXT"])
-  .search
-    .yandex 
-      = link_to "Посмотреть информацию о товаре в Яндексе", "http://yandex.ru/yandsearch?text=" + row["NAME"]
-    .google 
-      = link_to "Посмотреть информацию о товаре в Google", "http://www.google.ru/search?ie=UTF-8&hl=ru&q=" + row["NAME"] 
-- @properties.each() do |row|    
-  = row["NAME"] + "   " 
-  = row["VALUE"] 
-  %br    
+  - @product_row_name = row["NAME"]
+
+#properties
+  %h3
+    Характеристики
+  %table
+    %tbody
+      - @properties.each() do |row|    
+        %tr
+          %td
+            = row["NAME"]
+          %td
+            = row["VALUE"] 
+
+.search
+  .yandex 
+    = link_to "Посмотреть информацию о товаре в Яндексе", "http://yandex.ru/yandsearch?text=" +@product_row_name
+  .google 
+    = link_to "Посмотреть информацию о товаре в Google", "http://www.google.ru/search?ie=UTF-8&hl=ru&q=" + @product_row_name
+            
