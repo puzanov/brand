@@ -50,5 +50,8 @@ table {padding:0; margin:0;}
 .search {padding-top:15px;}
 .clear_left{clear:left;}
 .price_actions{padding-left:20px;}
-#properties table{font-size: 12px;}
-#properties td{width: 500px; border-bottom-style: dotted; border-bottom-color: black; border-width: 1px;}
+#properties_block table{font-size: 12px;}
+#properties_block td{width: 500px; border-bottom-style: dotted; border-bottom-color: black; border-width: 1px;}
+#description_link {float: left; margin-right: 10px;}
+#description_link {cursor: pointer;}
+#properties_link {cursor: pointer;}
