@@ -17,3 +17,7 @@
       = link_to "Посмотреть информацию о товаре в Яндексе", "http://yandex.ru/yandsearch?text=" + row["NAME"]
     .google 
       = link_to "Посмотреть информацию о товаре в Google", "http://www.google.ru/search?ie=UTF-8&hl=ru&q=" + row["NAME"] 
+- @properties.each() do |row|    
+  = row["NAME"] + "   " 
+  = row["VALUE"] 
+  %br    

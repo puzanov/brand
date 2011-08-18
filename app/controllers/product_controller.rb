@@ -23,6 +23,7 @@ include ProductHelper
       @product_price = getProductPrice(prod_id)
       @category_link = getCategory(row["IBLOCK_SECTION_ID"].to_s)
     end
-  end
-
+#------------------------получаем свойства    
+    @properties = getProperties(prod_id)
+    end
 end
