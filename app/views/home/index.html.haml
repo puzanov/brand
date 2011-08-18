@@ -10,8 +10,4 @@
 .clear_left
 = render "admin_links"
 .news 
-  = render :partial => "articles/brief_article", :collection => @articles
-
-%h3 Новости кратко
-
-= render :partial => "articles/short_article", :collection => @short_articles 
+  = render :partial => "articles/short_article", :collection => @articles
