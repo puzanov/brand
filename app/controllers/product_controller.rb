@@ -7,6 +7,7 @@ include ProductHelper
 
   def product_list
     cat_id = params[:id]
+    puts(params[:id])
     @products = getProducts(cat_id)
     @cat_name = getCategoryName(cat_id)
   end

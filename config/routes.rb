@@ -38,5 +38,4 @@ Brand::Application.routes.draw do
   match "/upload_img" => "articles#upload_img"
 
   root :to => "home#index"
-
 end
