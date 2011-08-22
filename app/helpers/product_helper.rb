@@ -48,30 +48,27 @@ module ProductHelper
             property["VALUE"] = prop_enum["VALUE"]
           end
         end
+        
+        prop_name = getPropertyName(property["IBLOCK_PROPERTY_ID"])
 
-        property["NAME"] = getPropertyName(property["IBLOCK_PROPERTY_ID"])
+        prop_name.each() do |name|
+          property["NAME"] = name["NAME"]
+          
+          if name["USER_TYPE"] == 'Checkbox'
+              property["VALUE"] = 'Есть' if property["VALUE"] == '1'
+              property["VALUE"] = 'Нет' if property["VALUE"] == '0'            
+          end
+        end
       end
       return results
     end
+    
   end 
 
   def getPropertyName(propertyId)
-    results = @@client.query("SELECT `name` FROM b_iblock_property WHERE id = " + propertyId.to_s)
-    results.each() do |row|
-      return row["name"]
-    end
+    results = @@client.query("SELECT * FROM b_iblock_property WHERE id = " + propertyId.to_s)
   end
 
-#  def getProperties(cat_name)
-#    @@client.query("SELECT id FROM b_iblock WHERE `name` = '" + cat_name + "'").each() do |row|
-#      results =  @@client.query("SELECT * FROM b_iblock_property WHERE iblock_id = " + (row["id"]).to_s + " AND  active = 'Y' ORDER BY sort ASC")
-#      return results
-#    end
-#  end
-
-#  def getPropertyValue(product_id, property_id)
-#    results =  @@client.query("SELECT * FROM b_iblock_element_prop_m4 WHERE iblock_property_id = " + property_id.to_s)
-#  end
 
  def getImageLink(imgId)
    results = @@client.query("SELECT * FROM b_file WHERE id = " + imgId) 
