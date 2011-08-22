@@ -40,7 +40,15 @@ module ProductHelper
   def getProperties(productId)
     @@client.query("SELECT * FROM b_iblock_element WHERE `code` = " + productId.to_s).each() do |row|
       results = @@client.query("SELECT * FROM b_iblock_element_property WHERE iblock_element_id = " + (row["ID"]).to_s)
+
       results.each() do |property|
+
+        if !property["VALUE_ENUM"].nil?
+          @@client.query("SELECT * FROM b_iblock_property_enum WHERE id = " + property["VALUE_ENUM"].to_s).each() do |prop_enum|
+            property["VALUE"] = prop_enum["VALUE"]
+          end
+        end
+
         property["NAME"] = getPropertyName(property["IBLOCK_PROPERTY_ID"])
       end
       return results
