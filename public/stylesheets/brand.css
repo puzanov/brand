@@ -53,5 +53,7 @@ table {padding:0; margin:0;}
 #properties_block table{font-size: 12px;}
 #properties_block td{width: 500px; border-bottom-style: dotted; border-bottom-color: black; border-width: 1px;}
 #description_link {float: left; margin-right: 10px;}
-#description_link {cursor: pointer;}
-#properties_link {cursor: pointer;}
+#description_link {cursor: pointer; font-size: 14px; color: blue;}
+#description_link a:visited {color: blue;}
+#properties_link {cursor: pointer; font-size: 14px; color: blue;}
+#properties_link a:visited {color: blue;}

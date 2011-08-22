@@ -12,12 +12,10 @@
       = row["PRICE"].to_s + " " + row["CURRENCY"].to_s
 
 #description_link
-  %h3
-    Описание
+  <a href=#>Описание</a>
 
 #properties_link
-  %h3
-    Характеристики
+  <a href=#>Характеристики</a>
 
 #description_block      
   - @product.each() do |row|
