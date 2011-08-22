@@ -21,7 +21,7 @@ include ProductHelper
         @image_link = getImageLink(row["DETAIL_PICTURE"].to_s)
       end
       @page_title = row["NAME"]
-      @product_price = getProductPrice(prod_id)
+#      @product_price = getProductPrice(prod_id)
       @category_link = getCategory(row["IBLOCK_SECTION_ID"].to_s)
     end
 #------------------------получаем свойства    

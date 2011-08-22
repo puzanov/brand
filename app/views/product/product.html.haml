@@ -1,15 +1,10 @@
 - @product.each() do |row|
   %h3
     = row["NAME"]
-//.img_container
-//  - if !@image_link.nil?
-//    - @image_link.each() do |row|
-//      %img{:src => "http://qwerty.kg/upload/" + row["SUBDIR"] + "/" + row["FILE_NAME"], :width => "300px", :height => "225px"}
-.price_container
-  - if !@product_price.nil?
-    Наша цена
-    - @product_price.each() do |row|
-      = row["PRICE"].to_s + " " + row["CURRENCY"].to_s
+.img_container
+  - if !@image_link.nil?
+    - @image_link.each() do |row|
+      %img{:src => "http://qwerty.kg/upload/" + row["SUBDIR"] + "/" + row["FILE_NAME"], :width => "300px", :height => "225px"}
 
 #description_link
   <a href=#>Описание</a>
