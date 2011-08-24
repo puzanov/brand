@@ -30,9 +30,9 @@ table {padding:0; margin:0;}
 .new {padding-bottom:20px;}
 .brief {float:left;width:500px;}
 .full_new a {font-size:9px;}
-.short .red{color:red;float:left;width:0px;}
-.short .green{color:green;float:left;width:0px;}
-.short .orange{color:#B36815;float:left;width:0px;}
+.short .red{color:red;float:left; position:absolute;}
+.short .green{color:green;float:left;position:absolute;}
+.short .orange{color:#B36815;float:left;position:absolute;}
 .short .short_title{position:relative;left:145px; width:400px;}
 .news_categories_link div {float:left; margin-right:3px;margin-top:3px;}
 .news_categories_link a {font-size:9px;}
