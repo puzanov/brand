@@ -5,4 +5,5 @@
     .green= short_article.article_type
   - elsif short_article.article_type == "Новости компании"
     .orange= short_article.article_type
-  %span= link_to short_article.title, short_article
+  .short_title
+    = link_to short_article.title, short_article
