@@ -3,8 +3,9 @@ h3 {margin:0; color:#990000;font-weight:normal;padding-bottom:10px;}
 table {padding:0; margin:0;}
 
 .main {width:800px;margin-left:auto;margin-right:auto}
-.head{height:40px;}
+.head{height:100px;}
 .logo {float:left;font-size:28px;color:#333333;cursor:pointer;}
+.logo_img{float:left;cursor:pointer;}
 .address {float:right; color:#660099; font-size:17px; padding-top:7px;}
 .map {text-align:right; font-size:12px}
 .map a {color:green;}
