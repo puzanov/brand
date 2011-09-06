@@ -4,7 +4,7 @@
 .img_container
   - if !@image_link.nil?
     - @image_link.each() do |row|
-      %img{:src => "http://qwerty.kg/upload/" + row["SUBDIR"] + "/" + row["FILE_NAME"], :width => "300px", :height => "225px"}
+      %img{:src => @file_source}
 
 #description_link
   <a href=#>Описание</a>

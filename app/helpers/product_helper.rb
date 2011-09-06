@@ -89,8 +89,20 @@ module ProductHelper
  end
 end
 
-def resizeImg(filePath)
- image = Magick::Image.read("http://qwerty.kg/upload/iblock/6cd/iphone4_2up_angle.jpg")  
-# image.resize_to_fill(225, 300)
- image.write("/brand/brand/public/uploads")
+def resizeImg(initial_image)
+  initial_image.each() do |image|
+    image_name = image["FILE_NAME"]
+    image_path = "http://qwerty.kg/upload/" + image["SUBDIR"] + "/"
+    image_source = image_path + image_name.gsub(" ", "%20") 
+    img =  Magick::Image.read(image_source).first
+    filepath = Rails.root.join('public', 'uploads', image_name)
+    file_source = "/uploads/" + image_name
+    if !FileTest.exists?("#{filepath}")
+      img.change_geometry('225x300'){|cols, rows, newimg|
+      newimg.resize!(cols, rows)
+      newimg.write(filepath)
+    }
+    end 
+    return file_source
+  end 
 end
