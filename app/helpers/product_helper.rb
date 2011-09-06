@@ -93,7 +93,7 @@ def resizeImg(initial_image)
   initial_image.each() do |image|
     image_name = image["FILE_NAME"]
     image_path = "/www/qwerty/upload/" + image["SUBDIR"] + "/"
-    image_source = image_path + image_name.gsub(" ", "%20") 
+    image_source = image_path + image_name 
     img =  Magick::Image.read(image_source).first
     filepath = Rails.root.join('public', 'uploads', image_name)
     file_source = "/uploads/" + image_name
