@@ -14,9 +14,16 @@ module ProductHelper
  end
 
 #-------------Получаем продукцию для категории
-
  def getProducts(categoryId)
-  results = @@client.query("SELECT * FROM b_iblock_element WHERE iblock_section_id = " + categoryId + " AND active = 'Y'") 
+ prod_array = Array.new
+ index = 0
+  @@client.query("SELECT * FROM b_iblock_section_element WHERE iblock_section_id = " + categoryId.to_s).each() do |row|
+    @@client.query("SELECT * FROM b_iblock_element WHERE id = " + row["IBLOCK_ELEMENT_ID"].to_s+ " AND active = 'Y'").each() do |element|
+      prod_array[index] = element
+      index = index + 1
+    end
+  end
+    return prod_array
  end
 
  def getCategory(categoryId)
@@ -80,4 +87,10 @@ module ProductHelper
   productExist = true if products.size > 0
   return productExist
  end
+end
+
+def resizeImg(filePath)
+ image = Magick::Image.read("http://qwerty.kg/upload/iblock/6cd/iphone4_2up_angle.jpg")  
+# image.resize_to_fill(225, 300)
+ image.write("/brand/brand/public/uploads")
 end
