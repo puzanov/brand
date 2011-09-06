@@ -14,7 +14,7 @@
 
 #description_block      
   - @product.each() do |row|
-    = raw(row["DETAIL_TEXT"])
+    = simple_format(raw(row["DETAIL_TEXT"]))
     - @product_row_name = row["NAME"]
 
 #properties_block
