@@ -1,8 +1,8 @@
 .short
   - if short_article.article_type == "Железо"
-    .red= short_article.article_type
+    .red= "Новости hardware" 
   - elsif short_article.article_type == "Софт"
-    .green= short_article.article_type
+    .green= "Новости software"
   - elsif short_article.article_type == "Новости компании"
     .orange= short_article.article_type
   .short_title
