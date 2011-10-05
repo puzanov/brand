@@ -93,10 +93,11 @@ def resizeImg(initial_image)
   initial_image.each() do |image|
     image_name = image["FILE_NAME"]
     image_path = "/www/qwerty/upload/" + image["SUBDIR"] + "/"
-    image_source = image_path + image_name 
+    image_source = (image_path + image_name) 
     img =  Magick::Image.read(image_source).first
-    filepath = Rails.root.join('public', 'uploads', image_name)
-    file_source = "/uploads/" + image_name
+    image_unic_name = image["SUBDIR"].sub("/","_") + image_name
+    filepath = Rails.root.join('public', 'uploads', image_unic_name)
+    file_source = "/uploads/" + image_unic_name
     if !FileTest.exists?("#{filepath}")
       img.change_geometry('225x300'){|cols, rows, newimg|
       newimg.resize!(cols, rows)
