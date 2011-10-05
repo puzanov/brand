@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
   # GET /articles.xml
   def index
     if !params[:article_type].nil?
-      @articles = Article.find_all_by_article_type(params[:article_type])
+      @articles = Article.order("id desc").find_all_by_article_type(params[:article_type])
     elsif        
       @articles = Article.order("id desc")
     end
