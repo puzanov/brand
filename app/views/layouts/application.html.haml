@@ -45,7 +45,11 @@
               Здравствуйте, 
               = session[:user].name
             %div=link_to "Редактировать профиль","/users/#{session[:user].id}"
-            .price=link_to 'Прайсы', prices_path 
+            - if !is_admin              
+              .price=link_to 'Прайсы', prices_path
+            - if is_admin
+              .price=link_to 'Прайсы для дилеров', prices_path
+              .price=link_to 'Прайсы для всех', '/'
             =link_to "Выйти", "/auth/logout"
         .events
           - get_current_event
