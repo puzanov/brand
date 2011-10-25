@@ -2,7 +2,7 @@ class CommonPricesController < ApplicationController
   # GET /common_prices
   # GET /common_prices.xml
   def index
-    @common_prices = CommonPrice.all
+    @common_prices = CommonPrice.order("id desc")
 
     respond_to do |format|
       format.html # index.html.erb
