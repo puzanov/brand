@@ -49,7 +49,7 @@
               .price=link_to 'Прайсы', prices_path
             - if is_admin
               .price=link_to 'Прайсы для дилеров', prices_path
-              .price=link_to 'Прайсы для всех', '/'
+              .price=link_to 'Прайсы для всех', common_prices_path
             =link_to "Выйти", "/auth/logout"
         .events
           - get_current_event

@@ -1,4 +1,6 @@
 Brand::Application.routes.draw do
+  resources :common_prices
+
   resources :prices
 
   get "product/categories"

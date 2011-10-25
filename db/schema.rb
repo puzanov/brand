@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110803122120) do
+ActiveRecord::Schema.define(:version => 20111025145234) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(:version => 20110803122120) do
     t.string   "article_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "common_prices", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "common_price_file_name"
+    t.string   "common_price_content_type"
+    t.integer  "common_price_file_size"
+    t.datetime "common_price_updated_at"
   end
 
   create_table "events", :force => true do |t|

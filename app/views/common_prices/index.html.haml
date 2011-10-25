@@ -1,0 +1,15 @@
+%h3= "Общие прайсы для скачивания"
+-if is_admin
+  .admin= link_to "Закачать прайс для всех", new_common_price_path
+
+- for common_price in @common_prices
+  .price_desc
+    Прайс за
+    - I18n.locale = :ru
+    = I18n.l common_price.created_at.to_date, :format => :long
+  .price_actions
+    %div=link_to "Скачать прайс!", common_price.common_price.url
+    - if is_admin
+      .admin
+        = link_to "Редактировать", edit_common_price_path(common_price)
+        = link_to "Удалить", common_price, :confirm => t('are_you_sure', :default => 'Are you sure?'), :method => :delete

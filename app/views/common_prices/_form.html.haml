@@ -1,0 +1,12 @@
+= form_for(@common_price, :html => { :multipart => true }) do |f|
+  - if @common_price.errors.any?
+    #error_explanation
+      %h2
+        = t 'errors.template.header', :model => t('.price'), :count => @common_price.errors.count
+      %ul
+        - @common_price.errors.full_messages.each do |msg|
+          %li= msg
+  = f.file_field :common_price
+
+  .actions
+    = f.submit
