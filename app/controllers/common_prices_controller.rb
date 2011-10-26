@@ -49,7 +49,7 @@ class CommonPricesController < ApplicationController
 
     respond_to do |format|
       if @common_price.save
-        format.html { redirect_to(@common_price, :notice => 'Common price was successfully created.') }
+        format.html { redirect_to :action => "index" }
         format.xml  { render :xml => @common_price, :status => :created, :location => @common_price }
       else
         format.html { render :action => "new" }

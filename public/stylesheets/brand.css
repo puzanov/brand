@@ -11,6 +11,7 @@ table {padding:0; margin:0;}
 .map a {color:green;}
 .clear {clear:both}
 .content{float:left;width:500px;}
+.content .last_common_price_link{margin-bottom:10px;}
 .sidebar{float:right;width:250px;}
 .middle {min-height:300px;}
 .submit {padding-top:10px;}
