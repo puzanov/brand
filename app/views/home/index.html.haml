@@ -1,5 +1,6 @@
 .last_common_price_link
-  = link_to "Скачать последний прайс", @common_price.first.common_price.url
+  - if @common_price.first
+    = link_to "Скачать последний прайс", @common_price.first.common_price.url
 .news_title
   %h3 Новости
 .news_categories_link
